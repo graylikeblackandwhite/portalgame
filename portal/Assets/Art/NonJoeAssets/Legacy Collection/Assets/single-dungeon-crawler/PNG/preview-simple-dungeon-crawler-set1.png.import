@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://b65tppuvc8arb"
-path="res://.godot/imported/PlayerSprite.png-51ec78abe02444fe30c71d5fd29fc291.ctex"
+uid="uid://djmi3nb3lg6dx"
+path="res://.godot/imported/preview-simple-dungeon-crawler-set1.png-fea1dd13d5a387edbdcf107da4638aca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/PlayerSprite.png"
-dest_files=["res://.godot/imported/PlayerSprite.png-51ec78abe02444fe30c71d5fd29fc291.ctex"]
+source_file="res://Assets/Art/NonJoeAssets/Legacy Collection/Assets/single-dungeon-crawler/PNG/preview-simple-dungeon-crawler-set1.png"
+dest_files=["res://.godot/imported/preview-simple-dungeon-crawler-set1.png-fea1dd13d5a387edbdcf107da4638aca.ctex"]
 
 [params]
 
