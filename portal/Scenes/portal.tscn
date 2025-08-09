@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwntn8imuus0q"]
+
+[ext_resource type="Texture2D" uid="uid://w6ek0ehnuv5d" path="res://Assets/Art/Portal.png" id="1_j20fm"]
+[ext_resource type="Script" uid="uid://b3qpkabbut1rk" path="res://Scripts/Player/portal.gd" id="1_oi2tk"]
+
+[node name="Portal" type="Node2D"]
+script = ExtResource("1_oi2tk")
+timer_max = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_j20fm")
+flip_h = true
