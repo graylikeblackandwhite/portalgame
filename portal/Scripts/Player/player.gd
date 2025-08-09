@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var portal_spawner = $PortalSpawn
+@onready var portal_spawner = $PortalSpawner
 @onready var sprite : Sprite2D = $Sprite2D
 
 # public vars
@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var jump_velocity : float = -400.0
 @export var portal_radius : float = 100
 
-var sprite_flipped = false;
+var sprite_flipped : bool = false;
 
 
 func _physics_process(delta: float) -> void:
@@ -36,6 +36,21 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
-			var portal_position = position + ((event.position - global_position).normalized() * portal_radius); 
-			portal_spawner.spawn_portal(portal_position, self.get_angle_to(event.position))
+			portal(event.position, self.get_angle_to(event.position))
+
+func portal(mouse_pos: Vector2, dir: float):
+
+	var portal_position = position + ((mouse_pos - global_position).normalized() * portal_radius); 
+
+	# ray cast to direction and if it hits surface then place portal on it
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position, portal_position)
+	var result = space_state.intersect_ray(query)
+
+	if result:
+		portal_spawner.spawn_portal(result.position, result.normal.angle())
+	else:
+		portal_spawner.spawn_portal(portal_position, dir)
+
+
 		
