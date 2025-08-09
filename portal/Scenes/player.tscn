@@ -1,18 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr5gyswt1tsj2"]
+[gd_scene load_steps=5 format=3 uid="uid://dr5gyswt1tsj2"]
 
 [ext_resource type="Script" uid="uid://br8hkxh06mtrt" path="res://Scripts/Player/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://b65tppuvc8arb" path="res://Assets/Art/PlayerSprite.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://gdxkwjus2c56" path="res://Assets/Art/Sprite2.png" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://65204q7ckp8n" path="res://Scripts/Player/portal_spawner.gd" id="3_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
-size = Vector2(50, 111)
+size = Vector2(29, 58)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
+jump_velocity = -500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8.5)
+position = Vector2(0.5, 10)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_v0iea")
+texture = ExtResource("2_cvnsp")
+
+[node name="PortalSpawner" type="Node2D" parent="."]
+script = ExtResource("3_vgqql")
